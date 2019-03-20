@@ -1,0 +1,121 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: TvShow
+#------------------------------------------------------------
+
+CREATE TABLE TvShow(
+        showId           Int  Auto_increment  NOT NULL ,
+        showTitle        Varchar (50) NOT NULL ,
+        showSynopsis     Text NOT NULL ,
+        showReleaseDate  Date NOT NULL ,
+        showEpisodeCount Int NOT NULL
+	,CONSTRAINT TvShow_PK PRIMARY KEY (showId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Actor
+#------------------------------------------------------------
+
+CREATE TABLE Actor(
+        actorId         Int  Auto_increment  NOT NULL ,
+        actorName       Varchar (50) NOT NULL ,
+        actorBio        Text NOT NULL ,
+        actorBirthdate  Date ,
+        actorBirthplace Varchar (50)
+	,CONSTRAINT Actor_PK PRIMARY KEY (actorId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Director
+#------------------------------------------------------------
+
+CREATE TABLE Director(
+        directorId         Int  Auto_increment  NOT NULL ,
+        directorName       Varchar (50) NOT NULL ,
+        directorBio        Text NOT NULL ,
+        directorBirtdate   Date NOT NULL ,
+        directorBirthplace Varchar (50) NOT NULL
+	,CONSTRAINT Director_PK PRIMARY KEY (directorId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Movie
+#------------------------------------------------------------
+
+CREATE TABLE Movie(
+        movieId          Int  Auto_increment  NOT NULL ,
+        movieTitle       Varchar (50) NOT NULL ,
+        movieSynopsis    Text NOT NULL ,
+        movieReleaseDate Date NOT NULL ,
+        movieDuration    Int NOT NULL ,
+        directorId       Int NOT NULL
+	,CONSTRAINT Movie_PK PRIMARY KEY (movieId)
+
+	,CONSTRAINT Movie_Director_FK FOREIGN KEY (directorId) REFERENCES Director(directorId)
+	,CONSTRAINT Movie_Director_AK UNIQUE (directorId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Singer
+#------------------------------------------------------------
+
+CREATE TABLE Singer(
+        singerId         Int  Auto_increment  NOT NULL ,
+        singerName       Varchar (50) NOT NULL ,
+        singerBio        Text NOT NULL ,
+        singerBirthdate  Date NOT NULL ,
+        singerBirthplace Varchar (50) NOT NULL
+	,CONSTRAINT Singer_PK PRIMARY KEY (singerId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Music
+#------------------------------------------------------------
+
+CREATE TABLE Music(
+        musicId          Int  Auto_increment  NOT NULL ,
+        musicTitle       Varchar (50) NOT NULL ,
+        musicRealaseDate Varchar (50) NOT NULL ,
+        musicAlbum       Varchar (50) NOT NULL ,
+        singerId         Int
+	,CONSTRAINT Music_PK PRIMARY KEY (musicId)
+
+	,CONSTRAINT Music_Singer_FK FOREIGN KEY (singerId) REFERENCES Singer(singerId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: PlayInMovie
+#------------------------------------------------------------
+
+CREATE TABLE PlayInMovie(
+        actorId Int NOT NULL ,
+        movieId Int NOT NULL
+	,CONSTRAINT PlayInMovie_PK PRIMARY KEY (actorId,movieId)
+
+	,CONSTRAINT PlayInMovie_Actor_FK FOREIGN KEY (actorId) REFERENCES Actor(actorId)
+	,CONSTRAINT PlayInMovie_Movie0_FK FOREIGN KEY (movieId) REFERENCES Movie(movieId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: PlayInTvShow
+#------------------------------------------------------------
+
+CREATE TABLE PlayInTvShow(
+        actorId Int NOT NULL ,
+        showId  Int NOT NULL
+	,CONSTRAINT PlayInTvShow_PK PRIMARY KEY (actorId,showId)
+
+	,CONSTRAINT PlayInTvShow_Actor_FK FOREIGN KEY (actorId) REFERENCES Actor(actorId)
+	,CONSTRAINT PlayInTvShow_TvShow0_FK FOREIGN KEY (showId) REFERENCES TvShow(showId)
+)ENGINE=InnoDB;
