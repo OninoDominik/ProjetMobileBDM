@@ -4,7 +4,7 @@
 $HostName = "localhost";
  
 //Define your database name here.
-$DatabaseName = "flowers";
+$DatabaseName = "projetmobilebdm";
  
 //Define your database username here.
 $HostUser = "root";

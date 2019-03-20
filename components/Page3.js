@@ -11,8 +11,8 @@ export default class Page3 extends Component {
         }
       }
     
-    GetItem (flower_name) {   
-      Alert.alert(flower_name); 
+    GetItem (testNom) {   
+      Alert.alert(testNom); 
     }
      
     componentDidMount(){
@@ -62,7 +62,7 @@ export default class Page3 extends Component {
             renderSeparator= {this.ListViewItemSeparator}
             enableEmptySections = {true} 
             renderRow={(rowData) => <Text style={styles.rowViewContainer} 
-            onPress={this.GetItem.bind(this, rowData.flower_name)} >{rowData.flower_name}</Text>}
+            onPress={this.GetItem.bind(this, rowData.testNom)} >{rowData.testNom}</Text>}
         /> 
         </View>
     );
