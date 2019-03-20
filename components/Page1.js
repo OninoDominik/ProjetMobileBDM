@@ -27,7 +27,9 @@ export default class Page1 extends Component {
    }
 
    navtoP3(){
-    this.props.navigation.navigate({routeName: "Page3"})
+        const { counter } = this.state;
+        this.setState({ counter: this.state.counter + 100 });
+        this.props.navigation.navigate({routeName: "Page3"})
     }
 
    render() {
