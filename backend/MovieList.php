@@ -8,7 +8,7 @@ if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
 } 
  
-$sql = "SELECT * FROM testNom";
+$sql = "SELECT * FROM test";
  
 $result = $conn->query($sql);
  
