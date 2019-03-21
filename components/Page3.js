@@ -17,7 +17,7 @@ export default class Page3 extends Component {
      
     componentDidMount(){
     
-      return fetch('http://192.168.2.21/ourSite/MovieList.php')
+      return fetch('http://192.168.1.124/ourSite/MovieList.php')
       .then((response) => response.json())
       .then((responseJson) => {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
