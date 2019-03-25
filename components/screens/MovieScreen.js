@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { View, Text, Platform, StyleSheet, FlatList } from 'react-native';
-import CustomText from '../CustomText';
+import MovieListItem from './MovieListItem';
 
 
 export default class MovieScreen extends Component {
-    constructor(props) {
-        super(props)
-    }  
+   constructor(props) {
+       super(props)
+   }
 
-    render() {
-        return (
-            <View>
-                <FlatList
-                data={[{key: 'a', text:'Je suis l\'element A!'}, {key: 'b', text:'Je suis l\'element B!'}]}
-                renderItem={({item}) => <View><Text>{item.key}</Text><Text>{item.text}</Text></View>}
-                />
-            </View>
-        );
-    }
-      
-}  
+   render() {
+       return (
+           <View>
+               <FlatList
+               data={[{imgSrc: require('../../ressources/movieImages/AvengersInfinity.png'),
+                   key: 'Avengers: Infinity War', text:'April 23, 2018'}, {key: 'b', text:'Je suis l\'element B!'}]}
+               renderItem={({item}) => <MovieListItem title={item.title} date={item.date} imgSrc={item.imgSrc}/>}
+               />
+           </View>
+       );
+   }
+
+}
 
 
  
