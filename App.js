@@ -13,6 +13,7 @@ import MovieScreen from './components/screens/MovieScreen'
 import MusicScreen from './components/screens/MusicScreen'
 import ShowScreen from './components/screens/ShowScreen'
 import MovieDetails from './components/screens/MovieDetails'
+import ShowDetails from './components/screens/ShowDetails'
 import { createStackNavigator, createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'
 
 const TabNavigator = createMaterialTopTabNavigator({
@@ -24,6 +25,7 @@ const TabNavigator = createMaterialTopTabNavigator({
 const StackNavigator = createStackNavigator({
   Home: { screen: TabNavigator},
   MovieDetails: {screen: MovieDetails},
+  ShowDetails: {screen: ShowDetails},
 
 });
 

@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import CustomText from '../CustomText';
-
+import { View, Text, Platform, StyleSheet, FlatList } from 'react-native';
+import MovieListItem from './ShowListItem';
+import { shows } from '../../ressources/database/show.js'
 
 export default class ShowScreen extends Component {
     constructor(props) {
         super(props)
-    }
-
-    render() {
+     }
+ 
+     onItemClick = (item) => {
+         this.props.navigation.navigate('ShowDetails', { show: item })
+     }
+ 
+     render() {
         return (
             <View>
-                <CustomText text='Page série!' color="#890007"/>
+                <FlatList
+                data={ shows }
+                renderItem={({item}) => <MovieListItem item={item} onItemClick={this.onItemClick}/>}
+                />
             </View>
         );
-    }
+     }
 }
