@@ -6,10 +6,10 @@ export default class MovieListItem extends Component{
 
     render() {
 
-        const { item } = this.props
+        const { item, onItemClick } = this.props
 
         return(
-            <TouchableOpacity onPress={ () => this.onItemClick(item) }>
+            <TouchableOpacity onPress={ () => onItemClick(item) }>
                 <View style={styles.container}> 
                     <Image source={item.imgSrc} style={styles.image}></Image>
                     <View style={styles.infosRightSide}>
