@@ -9,7 +9,7 @@ export default class MovieScreen extends Component {
        super(props)
     }
 
-    onItemClick(item){
+    onItemClick = (item) => {
         this.props.navigation.navigate('MovieDetails', { movie: item })
     }
 
