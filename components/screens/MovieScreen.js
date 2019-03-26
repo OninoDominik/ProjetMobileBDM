@@ -5,20 +5,24 @@ import { movies } from '../../ressources/database/movie.js'
 
 
 export default class MovieScreen extends Component {
-   constructor(props) {
+    constructor(props) {
        super(props)
-   }
+    }
 
-   render() {
+    onItemClick(item){
+        this.props.navigation.navigate('MovieDetails', { movie: item })
+    }
+
+    render() {
        return (
            <View>
                <FlatList
                data={ movies }
-               renderItem={({item}) => <MovieListItem item={item} navigation={this.props.navigation}/>}
+               renderItem={({item}) => <MovieListItem item={item} onItemClick={this.onItemClick}/>}
                />
            </View>
        );
-   }
+    }
 
 }
 

@@ -4,10 +4,6 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 export default class MovieListItem extends Component{
 
-    onItemClick(item){
-        this.props.navigation.navigate('MovieDetails', { movie: item })
-    }
-
     render() {
 
         const { item } = this.props
