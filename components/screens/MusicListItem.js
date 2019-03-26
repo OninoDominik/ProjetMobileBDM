@@ -29,7 +29,7 @@ const styles={
     },
 
     image:{
-        width:80,
+        width:120,
         height:120,
         margin:15
     },
