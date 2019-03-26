@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import { View, Text, Image } from 'react-native';
 
 
-export default class MovieListItem extends Component{
+export default class MusicListItem extends Component{
     render() {
 
-        const { title, director, date, actors, genre, imgSrc } = this.props
+        const { title, group, date, album, genre, imgSrc } = this.props
 
         return(
             <View style={styles.container}> 
                 <Image source={imgSrc} style={styles.image}></Image>
                 <View style={styles.infosRightSide}>
                     <Text style={styles.title}>{title}</Text>
-                    <Text>Directed by {director}</Text>
+                    <Text>Group: {group}</Text>
                     <Text>Released {date}</Text>
-                    <Text>Starring {actors}</Text>
+                    <Text>Album {album}</Text>
                     <Text>Genre: {genre}</Text>
                 </View>
             </View>
@@ -40,8 +40,4 @@ const styles={
         fontSize:22
     }
 }
-
-
-
-
 
