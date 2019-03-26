@@ -3,12 +3,17 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 
 export default class MovieListItem extends Component{
+
+    onItemClick(item){
+        this.props.navigation.navigate('MovieDetails', { movie: item })
+    }
+
     render() {
 
         const { item } = this.props
 
         return(
-            <TouchableOpacity>
+            <TouchableOpacity onPress={ () => this.onItemClick(item) }>
                 <View style={styles.container}> 
                     <Image source={item.imgSrc} style={styles.image}></Image>
                     <View style={styles.infosRightSide}>
