@@ -14,7 +14,7 @@ export default class MovieScreen extends Component {
            <View>
                <FlatList
                data={ movies }
-               renderItem={({item}) => <MovieListItem item={item}/>}
+               renderItem={({item}) => <MovieListItem item={item} navigation={this.props.navigation}/>}
                />
            </View>
        );
