@@ -1,23 +1,25 @@
 import React, {Component} from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 
 export default class MovieListItem extends Component{
     render() {
 
-        const { title, director, date, actors, genre, imgSrc } = this.props
+        const { item } = this.props
 
         return(
-            <View style={styles.container}> 
-                <Image source={imgSrc} style={styles.image}></Image>
-                <View style={styles.infosRightSide}>
-                    <Text style={styles.title}>{title}</Text>
-                    <Text>Directed by {director}</Text>
-                    <Text>Released {date}</Text>
-                    <Text>Starring {actors}</Text>
-                    <Text>Genre: {genre}</Text>
+            <TouchableOpacity>
+                <View style={styles.container}> 
+                    <Image source={item.imgSrc} style={styles.image}></Image>
+                    <View style={styles.infosRightSide}>
+                        <Text style={styles.title}>{item.title}</Text>
+                        <Text>Directed by {item.director}</Text>
+                        <Text>Released {item.date}</Text>
+                        <Text>Starring {item.actors}</Text>
+                        <Text>Genre: {item.genre}</Text>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 }

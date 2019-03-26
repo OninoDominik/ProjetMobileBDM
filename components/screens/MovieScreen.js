@@ -14,8 +14,7 @@ export default class MovieScreen extends Component {
            <View>
                <FlatList
                data={ movies }
-               renderItem={({item}) => <MovieListItem title={item.title} director={item.director} 
-                    date={item.date} actors={item.actors} genre={item.genre} imgSrc={item.imgSrc}/>}
+               renderItem={({item}) => <MovieListItem item={item}/>}
                />
            </View>
        );
