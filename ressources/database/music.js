@@ -9,18 +9,18 @@ const music = [
         genre:'Rock&Roll'
     },
     {
-        key:'1', 
+        key:'2', 
         imgSrc: require('../../ressources/musicImages/QueenGreatestHits2.png'),
-        title: 'I Want It All',
+        title: 'I Want to Break Free',
         group:'Queen', 
         date:'May 1989',
         album: 'Greatest Hits 2', 
         genre:'Rock&Roll'
     },
     {
-        key:'1', 
+        key:'3', 
         imgSrc: require('../../ressources/musicImages/QueenGreatestHits2.png'),
-        title: 'I Want It All',
+        title: 'A Kind of Magic',
         group:'Queen', 
         date:'May 1989',
         album: 'Greatest Hits 2', 
