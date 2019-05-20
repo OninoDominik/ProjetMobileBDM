@@ -19,7 +19,7 @@ export default class ShowDetails extends Component{
                     <Image source={show.imgSrc} style={styles.image}></Image>
                     <View style={styles.infosRightSide}>
                         <Text style={styles.title}>{show.title}</Text>
-                        <Text>Written by {show.director}</Text>
+                        <Text>Written by {show.writers}</Text>
                         <Text>Running from {show.date}</Text>
                         <Text>Starring {show.actors}</Text>
                         <Text>Genre: {show.genre}</Text>

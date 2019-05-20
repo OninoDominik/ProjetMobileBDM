@@ -13,7 +13,7 @@ const shows = [
         key:'2', 
         imgSrc: require('../../ressources/showImages/StrangerThings.jpg'),
         title: 'Stranger Things',
-        writers:'Ross Duffer, Matt Duffer, Justin Doble', 
+        writers:'Ross Duffer, Matt Duffer', 
         date:'July 2016 to now',
         actors: 'David Harbour, Winona Rider', 
         genre:'Science Fiction, Horror, Occult',
