@@ -5,20 +5,23 @@ import { music } from '../../ressources/database/music.js'
 
 
 export default class MusicScreen extends Component {
-   constructor(props) {
-       super(props)
-   }
-
-   render() {
-       return (
-           <View>
-               <FlatList
-               data={ music }
-               renderItem={({item}) => <MusicListItem title={item.title} group={item.group} 
-                    date={item.date} album={item.album} genre={item.genre} imgSrc={item.imgSrc}/>}
-               />
-           </View>
-       );
-   }
-
-}
+    constructor(props) {
+        super(props)
+     }
+ 
+     onItemClick = (item) => {
+         this.props.navigation.navigate('MusicDetails', { music: item })
+     }
+ 
+     render() {
+        return (
+            <View>
+                <FlatList
+                data={ music }
+                renderItem={({item}) => <MusicListItem item={item} onItemClick={this.onItemClick}/>}
+                />
+            </View>
+        );
+     }
+ 
+ }
