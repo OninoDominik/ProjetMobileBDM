@@ -27,7 +27,8 @@ const StackNavigator = createStackNavigator({
   Home: { screen: TabNavigator},
   MovieDetails: {screen: MovieDetails},
   ShowDetails: {screen: ShowDetails},
-  MusicDetails: {screen: MusicDetails},
+  MusicDetails: {screen: MusicDetails}},{
+  headerMode: 'none'
 });
 
 const App = createAppContainer(StackNavigator);
