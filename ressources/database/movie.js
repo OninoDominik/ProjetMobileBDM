@@ -28,6 +28,26 @@ const movies = [
         actors: 'Uma Thurman, John Travolta', 
         genre:'Crime, Drama',
         synopsis:'The lives of two mob hitmen, a boxer, a gangster\'s wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'
+    },
+    {
+        key:'4', 
+        imgSrc: require('../../ressources/movieImages/pokemon.jpg'),
+        title: 'Detective Pikachu',
+        director:'Rob Letterman', 
+        date:'Mai 8, 2019',
+        actors: 'Ryan Reynolds, Justice Smith', 
+        genre:'Science-fiction',
+        synopsis:"Tim Goodman, un jeune étudiant venant de rentrer à Ryme City, une ville où Pokémon et humains et dresseurs vivent en paix, part à la recherche de son père, un grand policier récemment disparu alors qu'il enquêtait lui-même sur des Pokémon, notamment Mewtwo. Tim s'associe rapidement avec un Pikachu, qui se remarque par son air hautain, prétentieux et son penchant pour la séduction et les cafés, et que Tim est le seul à pouvoir comprendre. Ensemble, les deux individus se lancent dans plusieurs enquêtes criminelles afin de retrouver le père du jeune homme et arrêter les projets d'une mystérieuse organisation. Ils vont pouvoir compter sur l'aide de Lucy Stevens, une apprentie journaliste accompagnée de son étrange Psykokwak."
+    },
+    {
+        key:'5', 
+        imgSrc: require('../../ressources/movieImages/EndGame.jpg'),
+        title: 'Avenger: End game',
+        director:'Anthony et Joe Russo', 
+        date:'Avril 24, 2019',
+        actors: 'Robert Downey Jr.Chris Evans', 
+        genre:'Super-héro',
+        synopsis:"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22e film de l'Univers cinématographique Marvel, débuté en 2008 et du 10e et avant-dernier de la phase III. Ce film est la suite directe de Avengers: Infinity War à la fin duquel « la moitié de tous les êtres vivants de l'univers » — et donc des personnages de l'Univers Marvel — disparaît d'un claquement de doigts de Thanos, après qu'il est entré en possession de toutes les Pierres du Gant de l'infini."
     }
 ]
 
