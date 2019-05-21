@@ -9,17 +9,27 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
-import Page1 from './components/Page1'
-import Page2 from './components/Page2'
-import Page3 from './components/Page3'
-import { createBottomTabNavigator, createAppContainer,createStackNavigator } from 'react-navigation'
+import MovieScreen from './components/screens/MovieScreen'
+import MusicScreen from './components/screens/MusicScreen'
+import ShowScreen from './components/screens/ShowScreen'
+import MovieDetails from './components/screens/MovieDetails'
+import ShowDetails from './components/screens/ShowDetails'
+import MusicDetails from './components/screens/MusicDetails'
+import { createStackNavigator, createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'
 
-const RootStack = createStackNavigator({
-  Page1: {screen: Page1 },
-  Page2: {screen: Page2 },
-  Page3: {screen: Page3 }
-})
+const TabNavigator = createMaterialTopTabNavigator({
+  Movies: MovieScreen,
+  Shows: ShowScreen,
+  Music: MusicScreen
+});
 
-const App = createAppContainer(RootStack);
+const StackNavigator = createStackNavigator({
+  Home: { screen: TabNavigator, navigationOptions: {  header:null }},
+  MovieDetails: {screen: MovieDetails},
+  ShowDetails: {screen: ShowDetails},
+  MusicDetails: {screen: MusicDetails}
+});
+
+const App = createAppContainer(StackNavigator);
 
 export default App;
