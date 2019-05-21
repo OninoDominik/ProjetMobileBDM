@@ -24,11 +24,10 @@ const TabNavigator = createMaterialTopTabNavigator({
 });
 
 const StackNavigator = createStackNavigator({
-  Home: { screen: TabNavigator},
+  Home: { screen: TabNavigator, navigationOptions: {  header:null }},
   MovieDetails: {screen: MovieDetails},
   ShowDetails: {screen: ShowDetails},
-  MusicDetails: {screen: MusicDetails}},{
-  headerMode: 'none'
+  MusicDetails: {screen: MusicDetails}
 });
 
 const App = createAppContainer(StackNavigator);
